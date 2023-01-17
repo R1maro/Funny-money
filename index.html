@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>No Money-No Funny</title>
+</head>
+<style>
+    body {
+        height: 100vh;
+        position: relative;
+    }
+
+    #img {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 350px;
+        height: 350px;
+        border-radius: 50%;
+    }
+</style>
+<body>
+<h1 id="score"></h1>
+<img src="1.jpg" alt="" id="img">
+<script>
+    function getRandomArbitrary(min, max) {
+        return Math.random() * (max - min) + min;
+    };
+    let x = 0;
+    document.querySelector('#img').addEventListener('click', function () {
+        document.querySelector('#img').style.top = getRandomArbitrary(1, 600) + 'px';
+        document.querySelector('#img').style.right = getRandomArbitrary(1, 1000) + 'px';
+    });
+    document.querySelector('#img').addEventListener('click',function () {
+        document.querySelector('#score').innerHTML = ++x;
+    });
+
+</script>
+</body>
+</html>
